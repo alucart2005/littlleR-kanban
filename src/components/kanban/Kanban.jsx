@@ -9,7 +9,13 @@ export function Kanban() {
     if(!result.destination) return
     const{source,destination} = result
     if(source.droppableId !==destination.droppableId){
-      const sourceColIndex=data.findIndex()
+      const sourceColIndex=data.findIndex(e=>e.id===source.droppableId)
+      const destinationColIndex=data.findIndex(e=>e.id===destination.droppableId)
+      const sourceCol = data[sourceColIndex]
+      const destinationCol = data[destinationColIndex]
+
+      const sourceTask = [...sourceCol.task]
+      const destinationTask = [...destinationCol.task]
     }
   }
   return (
